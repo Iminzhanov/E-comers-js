@@ -3,6 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+body {
+   font-family: 'Poppins', sans-serif;
+}
 .container {
     box-sizing: border-box;
     max-width: 1260px;
@@ -15,44 +18,3 @@ li {
 a {
     text-decoration: none;
 }
-.header__top {
-    display: flex;
-    justify-content: space-between;
-    padding: 16px 0;
-}
-.contact {
-    display: flex;
-    li {
-        padding-right: 38px;
-    }
-    a {
-        color: #151515;
-        &:hover {
-            color: #6A983C;
-        }
-    }
-}
-.nav__menu {
-    ul {
-        display: flex;
-    }
-    li {
-        padding: 0 0 0 38px;
-    }
-    a {
-       color: #151515;
-       &:hover {
-        color: #6A983C;
-       }
-    }
-}
-.header__middle {
-    display: flex;
-    justify-content: space-between;
-}
-    .header__icon {
-        width: 24%;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-    }

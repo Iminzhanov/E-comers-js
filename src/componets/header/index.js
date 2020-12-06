@@ -1,7 +1,8 @@
 import Contact from './contact.js';
 import Nav from './nav.js';
 import Logo from './logo.js';
-import Icon from './icon.js';
+import SearchBar from './searchBar.js';
+import System from './system.js';
 
 const Header = () => {
     const tagHeader = document.createElement('header');
@@ -13,9 +14,11 @@ const Header = () => {
         </div>
         <div class=header__middle>
         ${Logo}
-        ${Icon}
+        ${SearchBar}
+        ${System}
         </div>
-        <div class=header__bottom></div>
+        <div class=header__bottom>
+        </div>
       </div>
     `;
     document.body.appendChild(tagHeader);
