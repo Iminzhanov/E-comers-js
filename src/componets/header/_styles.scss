@@ -9,6 +9,7 @@
         padding: 44px 0;
         display: flex;
         justify-content: space-between;
+        align-items: center;
     }
 }
 .contact {
@@ -45,28 +46,118 @@
     max-height: 42px;
     border-radius: 12px;
     &__list {
-        max-height: 23px;
+    max-height: 23px;
+    width: 120px;
+        &.is-active {
+            li {
+                display: block;
+                 animation: fading 0.3s forwards;
+                @keyframes fading {
+                    from {
+                        height: 0;
+                    }
+                    to {
+                        height: 40px;
+                    }
+                }
+            }
+            
+        }
+    }
+    &__item {
+        display: none;
+        background-color: $color-lightGray;
+        &:last-child {
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+        &:nth-child(2) {
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+        &:hover {
+            background-color: $color-green;
+            a {
+                color: $color-white;
+            }
+        }
+    }
+    &__link {
+        @include font(14px,400px,19px, $font-openSans);
+        padding: 10px 15px;
+        color: $color-black;
+
     }
     &__title {
         @include font(16px, 700, 23px);
         position: relative;
         cursor: pointer;
+        margin-bottom: 10px;
         img {
             position: absolute;
             top: 50%;
-            right: -20px;
+            right: -25px;
             transform: translateY(-50%);
-            max-width: 16px;   
+            max-width: 12px;
+            transition: 0.3s;
+        }
+        &.is-active {
+            img {
+                transform: rotate(180deg) translateY(50%);
+            }
         }
     }
     &__input {
+        @include font(14px,400px,19px, $font-openSans);
         padding: 3px 0 3px 24px;
         margin-left: 48px;
         border: none;
         outline: none;
         background-color: transparent;
         border-left: 1px solid $color-Gray;
+        width: 230px;
+        color: $color-Gray;
+        &::placeholder {
+            @include font(14px,400px,19px, $font-openSans);
+            color: $color-Gray;
+        }
+        
     }
-
+    &__btn {
+        @include flex-center();
+        margin-left: 15px;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        cursor: pointer;
+        img {
+            transition: 0.3s;
+        }
+        &.is-active {
+            img {
+                transform: rotate(-90deg);
+            }
+        }
+    }
 }
-
+.system {
+    &__list {
+        display: flex;
+    }
+    &__item {
+        margin-left: 40px;
+        position: relative;
+    }
+    &__count {
+        @include font(12, 600, 18px);
+        @include flex-center();
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background-color: $color-red;
+        color: $color-white;
+        border-radius: 50%;
+        width: 16px;
+        min-height: 16px;
+    }
+}

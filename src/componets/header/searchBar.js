@@ -14,7 +14,9 @@ const searchBar = () => {
     <label>
        <input class="search-bar__input" type="text" placeholder="Search Products, categories ..." />
     </label>  
-    <button><img src="./src/images/lupa.svg"</button>
+    <button class="search-bar__btn">
+    <img src="./src/images/lupa.svg"/>
+    </button>
     `;
     return div.outerHTML;
 };
